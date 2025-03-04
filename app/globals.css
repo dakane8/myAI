@@ -78,5 +78,6 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+    @apply transition-colors duration-300 ease-in-out;
   }
 }
