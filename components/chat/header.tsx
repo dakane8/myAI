@@ -6,7 +6,7 @@ import { CHAT_HEADER, CLEAR_BUTTON_TEXT } from "@/configuration/ui";
 import { AI_NAME } from "@/configuration/identity";
 
 export const AILogo = () => (
-  <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
+  <div className="w-10 h-10 md:w-12 md:h-12 relative">
     <Image src="/ai-logo.png" alt={AI_NAME} width={48} height={48} />
     <div className="w-2 h-2 rounded-full bg-green-500 absolute -bottom-0.5 -right-0.5"></div>
   </div>
@@ -40,39 +40,62 @@ export default function ChatHeader({ clearMessages }: { clearMessages: () => voi
   }, []);
 
   return (
-    <div className="z-10 flex justify-between items-center fixed top-0 w-full p-4 sm:p-5 bg-background text-foreground shadow-md transition-colors duration-300">
-      <div className="flex items-center gap-2">
-        {/* AI Logo */}
-        <AILogo />
-        
-        {/* Chat Header (Hidden on small screens) */}
-        <p className="hidden sm:block text-lg font-medium">{CHAT_HEADER}</p>
+    <div className="z-10 flex justify-between items-center fixed top-0 w-full p-4 bg-background text-foreground shadow-md transition-colors duration-300">
+      {/* Desktop View (Visible at md: 768px and above) */}
+      <div className="hidden md:flex w-full justify-between items-center">
+        <div className="flex items-center gap-2">
+          <AILogo />
+          <p className="text-lg font-medium">{CHAT_HEADER}</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <Button
+            onClick={toggleDarkMode}
+            className="shadow-sm p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors"
+            variant="outline"
+            size="icon"
+          >
+            {isDarkMode ? (
+              <SunIcon className="w-5 h-5 text-yellow-500" />
+            ) : (
+              <MoonIcon className="w-5 h-5 text-gray-800" />
+            )}
+          </Button>
+          <Button
+            onClick={clearMessages}
+            className="shadow-sm p-2 rounded-full transition-colors"
+            variant="outline"
+            size="icon"
+          >
+            <EraserIcon className="w-5 h-5" />
+          </Button>
+        </div>
       </div>
 
-      <div className="flex items-center gap-2 sm:gap-3">
-        {/* Dark Mode Toggle Button */}
-        <Button
-          onClick={toggleDarkMode}
-          className="shadow-sm p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors"
-          variant="outline"
-          size="icon"
-        >
-          {isDarkMode ? (
-            <SunIcon className="w-5 h-5 text-yellow-500" />
-          ) : (
-            <MoonIcon className="w-5 h-5 text-gray-800" />
-          )}
-        </Button>
-
-        {/* Clear Messages Button */}
-        <Button
-          onClick={clearMessages}
-          className="shadow-sm p-2 rounded-full transition-colors"
-          variant="outline"
-          size="icon"
-        >
-          <EraserIcon className="w-5 h-5" />
-        </Button>
+      {/* Mobile View (Visible below md: 768px) */}
+      <div className="flex md:hidden w-full justify-between items-center">
+        <AILogo />
+        <div className="flex items-center gap-2">
+          <Button
+            onClick={toggleDarkMode}
+            className="shadow-sm p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors"
+            variant="outline"
+            size="icon"
+          >
+            {isDarkMode ? (
+              <SunIcon className="w-5 h-5 text-yellow-500" />
+            ) : (
+              <MoonIcon className="w-5 h-5 text-gray-800" />
+            )}
+          </Button>
+          <Button
+            onClick={clearMessages}
+            className="shadow-sm p-2 rounded-full transition-colors"
+            variant="outline"
+            size="icon"
+          >
+            <EraserIcon className="w-5 h-5" />
+          </Button>
+        </div>
       </div>
     </div>
   );
