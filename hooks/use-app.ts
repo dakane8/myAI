@@ -215,11 +215,8 @@ export default function useApp() {
   }, [messages]);
 
   const clearMessages = () => {
-    setMessages([]);
+    setMessages(() => [initialAssistantMessage]);
     setWordCount(0);
-    const [messages, setMessages] = useState<DisplayMessage[]>([
-      initialAssistantMessage,
-    ]);
   };
 
   return {
