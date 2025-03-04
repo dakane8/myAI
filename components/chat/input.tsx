@@ -30,7 +30,7 @@ export default function ChatInput({
 
   return (
     <>
-      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5 bg-background text-foreground shadow-md dark:shadow-[0_-10px_15px_-2px_rgba(0,0,0,0.5)] transition-colors">
+      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5 bg-background text-foreground shadow-md dark:shadow-[0_-10px_15px_-2px_rgba(0,0,0,0.5)] transition-colors duration-300 ease-in-out">
         <div className="max-w-screen-lg w-full">
           <Form {...form}>
             <form
@@ -49,7 +49,7 @@ export default function ChatInput({
                         {...field}
                         onChange={handleInputChange}
                         value={input}
-                        className="border-none focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-foreground placeholder-muted-foreground transition-colors"
+                        className="border-none focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-foreground placeholder-muted-foreground transition-colors duration-300 ease-in-out"
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
                         placeholder="Type your message here..."
