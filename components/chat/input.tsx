@@ -30,7 +30,7 @@ export default function ChatInput({
 
   return (
     <>
-      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5 bg-white shadow-[0_-10px_15px_-2px_rgba(255,255,255,1)] text-base">
+      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5 bg-background text-foreground shadow-md dark:shadow-[0_-10px_15px_-2px_rgba(0,0,0,0.5)] transition-colors">
         <div className="max-w-screen-lg w-full">
           <Form {...form}>
             <form
@@ -49,7 +49,7 @@ export default function ChatInput({
                         {...field}
                         onChange={handleInputChange}
                         value={input}
-                        className="border-none focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent"
+                        className="border-none focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-foreground placeholder-muted-foreground transition-colors"
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
                         placeholder="Type your message here..."
@@ -60,7 +60,7 @@ export default function ChatInput({
               />
               <Button
                 type="submit"
-                className="rounded-full w-10 h-10 p-0 flex items-center justify-center"
+                className="rounded-full w-10 h-10 p-0 flex items-center justify-center bg-primary text-primary-foreground transition-colors"
                 disabled={input.trim() === "" || isLoading}
               >
                 <ArrowUp className="w-5 h-5" />
