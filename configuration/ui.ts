@@ -1,7 +1,7 @@
 import { AI_NAME, OWNER_NAME } from "@/configuration/identity";
 
 export const CHAT_HEADER: string = `E.M.M.A.`;
-export const MESSAGE_PLACEHOLDER: string = `[MESSAGE PLACEHOLDER]`;
+export const MESSAGE_PLACEHOLDER: string = `Nothing happening here`;
 export const FOOTER_MESSAGE: string = `Created by Daniel Kane`;
 export const CLEAR_BUTTON_TEXT: string = `Clear Chats`;
 export const PAGE_TITLE: string = `E.M.M.A. AI`;
