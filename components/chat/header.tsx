@@ -40,14 +40,14 @@ export default function ChatHeader({ clearMessages }: { clearMessages: () => voi
   }, []);
 
   return (
-    <div className="z-10 flex justify-between items-center fixed top-0 w-full p-4 bg-background text-foreground shadow-md transition-colors duration-300">
+    <div className="z-10 flex justify-center items-center fixed top-0 w-full p-4 bg-background text-foreground shadow-md transition-colors duration-300">
       {/* Desktop View (Visible at md: 768px and above) */}
-      <div className="hidden md:flex w-full justify-between items-center">
+      <div className="hidden md:flex w-full justify-center items-center">
         <div className="flex items-center gap-2">
           <AILogo />
           <p className="text-lg font-medium">{CHAT_HEADER}</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex-0 w-[100px] flex justify-end items-center gap-3">
           <Button
             onClick={toggleDarkMode}
             className="shadow-sm p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors"
