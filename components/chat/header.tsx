@@ -12,14 +12,9 @@ export const AILogo = () => (
   </div>
 );
 
-export default function ChatHeader({
-  clearMessages,
-}: {
-  clearMessages: () => void;
-}) {
+export default function ChatHeader({ clearMessages }: { clearMessages: () => void }) {
   const [isDarkMode, setIsDarkMode] = useState(
-    typeof window !== "undefined" &&
-      document.documentElement.classList.contains("dark")
+    typeof window !== "undefined" && document.documentElement.classList.contains("dark")
   );
 
   // Toggle dark mode
@@ -45,13 +40,16 @@ export default function ChatHeader({
   }, []);
 
   return (
-    <div className="z-10 flex justify-between items-center fixed top-0 w-full p-3 sm:p-5 bg-background text-foreground shadow-md transition-colors">
-      <div className="flex items-center gap-2 sm:gap-4">
+    <div className="z-10 flex justify-between items-center fixed top-0 w-full p-4 sm:p-5 bg-background text-foreground shadow-md transition-colors duration-300">
+      <div className="flex items-center gap-2">
+        {/* AI Logo */}
         <AILogo />
-        <p className="text-sm sm:text-lg font-semibold">{CHAT_HEADER}</p>
+        
+        {/* Chat Header (Hidden on small screens) */}
+        <p className="hidden sm:block text-lg font-medium">{CHAT_HEADER}</p>
       </div>
 
-      <div className="flex items-center gap-2 sm:gap-4">
+      <div className="flex items-center gap-2 sm:gap-3">
         {/* Dark Mode Toggle Button */}
         <Button
           onClick={toggleDarkMode}
@@ -69,12 +67,11 @@ export default function ChatHeader({
         {/* Clear Messages Button */}
         <Button
           onClick={clearMessages}
-          className="shadow-sm p-2 sm:gap-2 rounded-full sm:rounded-lg transition-all"
+          className="shadow-sm p-2 rounded-full transition-colors"
           variant="outline"
           size="icon"
         >
           <EraserIcon className="w-5 h-5" />
-          <span className="hidden sm:inline">{CLEAR_BUTTON_TEXT}</span>
         </Button>
       </div>
     </div>
