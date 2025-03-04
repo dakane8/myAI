@@ -47,6 +47,7 @@ export default function ChatHeader({ clearMessages }: { clearMessages: () => voi
           <AILogo />
           <p className="text-lg font-medium">{CHAT_HEADER}</p>
         </div>
+        </div>
         <div className="flex-0 w-[100px] flex justify-end items-center gap-3">
           <Button
             onClick={toggleDarkMode}
@@ -68,7 +69,6 @@ export default function ChatHeader({ clearMessages }: { clearMessages: () => voi
           >
             <EraserIcon className="w-5 h-5" />
           </Button>
-        </div>
       </div>
 
       {/* Mobile View (Visible below md: 768px) */}
