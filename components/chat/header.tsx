@@ -68,6 +68,7 @@ export default function ChatHeader({ clearMessages }: { clearMessages: () => voi
             size="icon"
           >
             <EraserIcon className="w-5 h-5" />
+            <span>{CLEAR_BUTTON_TEXT}</span>
           </Button>
       </div>
 
