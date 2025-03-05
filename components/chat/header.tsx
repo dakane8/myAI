@@ -48,7 +48,7 @@ export default function ChatHeader({ clearMessages }: { clearMessages: () => voi
           <p className="text-lg font-medium">{CHAT_HEADER}</p>
         </div>
         </div>
-        <div className="flex-0 w-[100px] flex justify-end items-center gap-3">
+        <div className="hidden md:flex-0 w-[100px] flex justify-end items-center gap-3">
           <Button
             onClick={toggleDarkMode}
             className="shadow-sm p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors"
@@ -63,11 +63,11 @@ export default function ChatHeader({ clearMessages }: { clearMessages: () => voi
           </Button>
           <Button
             onClick={clearMessages}
-            className="shadow-sm p-2 rounded-full transition-colors"
+            className="gap-2 shadow-sm transition-colors"
             variant="outline"
-            size="icon"
+            size="sm"
           >
-            <EraserIcon className="w-5 h-5" />
+            <EraserIcon className="w-4 h-4" />
             <span>{CLEAR_BUTTON_TEXT}</span>
           </Button>
       </div>
