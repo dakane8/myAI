@@ -12,7 +12,14 @@ export default function ChatFooter() {
       </div>
       <div className="flex-grow text-center">
         {/* Center Pane */}
-        {FOOTER_MESSAGE}
+        <a 
+          href="https://portfolio-21e68.web.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+          >
+          {FOOTER_MESSAGE}
+        </a>
       </div>
       <div className="flex-grow text-right">
         {/* Right Pane */}
