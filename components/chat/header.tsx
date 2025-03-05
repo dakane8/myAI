@@ -62,7 +62,7 @@ export default function ChatHeader({ clearMessages }: { clearMessages: () => voi
           </Button>
           <Button
             onClick={clearMessages}
-            className="gap-2 shadow-sm transition-colors"
+            className="gap-2 shadow-sm rounded-full transition-colors"
             variant="outline"
             size="icon"
           >
