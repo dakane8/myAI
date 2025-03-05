@@ -30,12 +30,12 @@ export default function ChatInput({
 
   return (
     <>
-      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5 bg-background text-foreground shadow-md dark:shadow-[0_-10px_15px_-2px_rgba(0,0,0,0.5)] transition-colors duration-300 ease-in-out">
+      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5 bg-background text-foreground shadow-md dark:shadow-white/30 transition-colors duration-300 ease-in-out">
         <div className="max-w-screen-lg w-full">
           <Form {...form}>
             <form
               onSubmit={handleSubmit}
-              className={`flex-0 flex w-full p-1 border rounded-full shadow-sm ${
+              className={`flex-0 flex w-full p-1 border rounded-full shadow-sm dark:shadow-white/30 ${
                 isFocused ? "ring-2 ring-ring ring-offset-2" : ""
               }`}
             >
