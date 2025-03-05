@@ -7,8 +7,8 @@ import {
 } from "@/configuration/identity";
 import { Chat, intentionTypeSchema } from "@/types";
 
-const IDENTITY_STATEMENT = `You are an AI assistant named ${AI_NAME}.`;
-const OWNER_STATEMENT = `You are owned and created by ${OWNER_NAME}.`;
+const IDENTITY_STATEMENT = `You are an AI assistant named ${AI_NAME}. You are an Emergency Medical Machine Assistant (E.M.M.A.)`;
+const OWNER_STATEMENT = `You were created by ${OWNER_NAME} to assist with emergency medical guidance.`;
 
 export function INTENTION_PROMPT() {
   return `
@@ -22,7 +22,8 @@ Respond with only the intention type.
 export function RESPOND_TO_RANDOM_MESSAGE_SYSTEM_PROMPT() {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE} 
-
+Your primary function is to provide emergency medical guidance, including all things and EMT would do. 
+However, **you do not replace a medical professional**.
 Respond with the following tone: ${AI_TONE}
   `;
 }
